@@ -5,6 +5,7 @@ import positionSetter from "../../helpers/positionSetter";
 const Banner = ({ data }) => {
   const isAmpBreakPoint =true;
   const { bannerText, ctaSettings, textPositioning: positions, opacity: bgOpacity } = data;
+  console.log("Bannerdata",data)
   const bannerImage = data.image?.img?.image;
   const background = bannerImage.image;
   const imageURL = getImageURL(background, bannerImage);

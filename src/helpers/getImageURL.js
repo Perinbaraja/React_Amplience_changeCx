@@ -5,6 +5,20 @@ const ImageFormat = {
     GIF : 'gif',
     DEFAULT : 'default',
   }
+
+ export const getURL = (image) => {
+    const getImageHost = (host) => {
+      if (host === 'i1.adis.ws') {
+        return 'cdn.media.amplience.net';
+      }
+      return host;
+    };
+   return typeof image === 'string'
+    ? image
+    : `https://${getImageHost(image.defaultHost)}/i/${encodeURIComponent(image.endpoint)}/${encodeURIComponent(
+        image.name,
+      )}`;
+  }
   export const  getImageURL = (image, transformations) => {
     const {
       seoFileName,
@@ -28,19 +42,9 @@ const ImageFormat = {
       quality,
     } = transformations;
   
-    const getImageHost = (host) => {
-      if (host === 'i1.adis.ws') {
-        return 'cdn.media.amplience.net';
-      }
-      return host;
-    };
-  
-    let url =
-      typeof image === 'string'
-        ? image
-        : `https://${getImageHost(image.defaultHost)}/i/${encodeURIComponent(image.endpoint)}/${encodeURIComponent(
-            image.name,
-          )}`;
+   
+    let url =getURL(image)
+      
   
     if (seoFileName) {
       url += `/${encodeURIComponent(seoFileName)}`;

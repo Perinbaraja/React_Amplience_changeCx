@@ -1,12 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
 import TopBannner from "./components/TopBannner";
+import Header from "./components/Header";
+import HeaderData from "./components/Header/HeaderData";
 
 function App() {
   return (
-    <>
+    <div className="px-16"><HeaderData/>
       <TopBannner />
-    </>
+    </div>
   );
 }
 
