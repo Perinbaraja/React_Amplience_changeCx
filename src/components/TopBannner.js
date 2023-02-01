@@ -11,8 +11,8 @@ const TopBannner = () => {
   useEffect(() => {
     async function fetchBanner() {
       const res = await AmplienceClient.getContentItemById(contentID);
-      const res2 = await AmplienceClient.getContentItemById("7e98abe3-ae09-42a3-9d76-6994f6b55fd7");
-      console.log("header data : ",res2.body)
+      // const res2 = await AmplienceClient.getContentItemById("7e98abe3-ae09-42a3-9d76-6994f6b55fd7");
+      // console.log("header data : ",res2.body)
       setBanner(res.body);
     }
 

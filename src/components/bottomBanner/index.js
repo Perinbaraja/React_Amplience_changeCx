@@ -1,9 +1,10 @@
 import { getImageURL } from "../../helpers/getImageURL";
 import positionSetter from "../../helpers/positionSetter";
 
-const Banner = ({ data }) => {
+const BottomBanner = ({ data }) => {
+  console.log("BottomBanner", data);
   const isAmpBreakPoint = true;
-  // console.log(data);
+
   const {
     bannerText,
     ctaSettings,
@@ -79,4 +80,4 @@ const Banner = ({ data }) => {
   );
 };
 
-export default Banner;
+export default BottomBanner;
