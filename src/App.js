@@ -10,6 +10,7 @@ function App() {
     <div className="px-16">
       <HeaderData />
       <TopBannner />
+      <BottomBannerData />
     </div>
   );
 }
